@@ -14,9 +14,9 @@ class App extends React.Component {
   }
 
   handleChange (e) {
-    e.preventDefault(
-      console.log(e)
-    )
+    this.setState({
+      url: e.target.value
+    })
   }
 
   handleSubmit (e) {
@@ -30,6 +30,7 @@ class App extends React.Component {
         <header className='App-header'>
           <Form
             hello='hello'
+            url={this.state.url}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
