@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Form = (props) => {
-  console.log(props)
   return (
     <div className='form-component'>
       <form className='form'>
