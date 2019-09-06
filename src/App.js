@@ -1,5 +1,6 @@
 import React from 'react'
 import './App.css'
+import Header from './components/Header/Header'
 import Form from './components/Form/Form'
 
 class App extends React.Component {
@@ -27,14 +28,14 @@ class App extends React.Component {
   render () {
     return (
       <div className='App'>
-        <header className='App-header'>
-          <Form
-            hello='hello'
-            url={this.state.url}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
-        </header>
+        <Header />
+
+        <Form
+          hello='hello'
+          url={this.state.url}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
       </div>
     )
   }
