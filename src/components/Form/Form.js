@@ -12,7 +12,7 @@ const Form = (props) => {
           placeholder='Please enter a url'
           onChange={props.handleChange}
         />
-        <button className='form-submitbutton'>
+        <button className='form-submitbutton' onClick={props.handleSubmit}>
           Add Item
         </button>
       </form>
