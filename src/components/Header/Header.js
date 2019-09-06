@@ -1,8 +1,11 @@
 import React from 'react'
+import './header.css'
 
 const Header = () => {
   return (
-    <h1>What The Scrap</h1>
+    <div className='app-header'>
+      <h1>What The Scrap</h1>
+    </div>
   )
 }
 
