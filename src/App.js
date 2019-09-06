@@ -2,6 +2,7 @@ import React from 'react'
 import './App.css'
 import Header from './components/Header/Header'
 import Form from './components/Form/Form'
+import axios from 'axios'
 
 class App extends React.Component {
   constructor (props) {
@@ -22,7 +23,12 @@ class App extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    console.log(this.state.url)
+
+    axios.get('http://localhost:8000/', {
+      params: {url: this.state.url}
+    }).then(res => {
+      console.log(res)
+    })
   }
 
   render () {
