@@ -31,7 +31,6 @@ class App extends React.Component {
         <Header />
 
         <Form
-          hello='hello'
           url={this.state.url}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
