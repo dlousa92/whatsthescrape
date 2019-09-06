@@ -3,14 +3,16 @@ import React from 'react'
 const Form = (props) => {
   console.log(props)
   return (
-    <div className="form-component">
-      <form className="form">
+    <div className='form-component'>
+      <form className='form'>
         <input
-          type="text"
-          className="form-input"
-          placeholder="Please enter a URL"
+          type='text'
+          className='form-input'
+          value={props.url}
+          placeholder='Please enter a url'
+          onChange={props.handleChange}
         />
-        <button className="form-submitbutton">
+        <button className='form-submitbutton'>
           Add Item
         </button>
       </form>
