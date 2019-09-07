@@ -8,7 +8,8 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      url: ''
+      url: '',
+      wordTotal: 0
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -24,10 +25,17 @@ class App extends React.Component {
   handleSubmit (e) {
     e.preventDefault()
 
-    axios.get('http://localhost:8000/', {
+    axios.get('http://localhost:8000/scrape', {
       params: {url: this.state.url}
     }).then(res => {
-      console.log(res)
+      let text = res.data
+      let textArray = text.split(' ')
+      console.log(textArray)
+      
+      this.setState({
+        wordTotal: textArray.length
+      })
+      console.log(this.state.wordTotal)
     })
   }
 
