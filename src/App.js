@@ -62,10 +62,15 @@ class App extends React.Component {
   handleSubmit (e) {
     e.preventDefault()
 
-    axios.get('http://localhost:8000/scrape', {
-      params: {url: this.state.url}
-    }).then(res => {
-      const text = res.data
+    axios.all([
+      axios.get('http://localhost:8000/scrape', {
+        params: {url: this.state.url}
+      }),
+      axios.get('http://localhost:8000/scrape-img', {
+        params: {url: this.state.url}
+      })
+    ]).then(axios.spread((textRes, imageRes) => {
+      const text = textRes.data
       const textArray = text.split(' ')
 
       // Add up total amount of words
@@ -74,7 +79,7 @@ class App extends React.Component {
       })
 
       this.getTopTenWords(textArray)
-    })
+    }))
   }
 
   render () {
