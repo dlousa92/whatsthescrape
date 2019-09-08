@@ -74,6 +74,8 @@ class App extends React.Component {
     ]).then(axios.spread((textRes, imageRes) => {
       const text = textRes.data
       const textArray = text.split(' ')
+      const images = imageRes.data
+      console.log(images)
 
       // Add up total amount of words
       this.setState({
