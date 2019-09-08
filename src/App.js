@@ -9,11 +9,48 @@ class App extends React.Component {
     super(props)
     this.state = {
       url: '',
-      wordTotal: 0
+      wordTotal: 0,
+      topTenWords: []
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.getTopTenWords = this.getTopTenWords.bind(this)
+  }
+
+  getTopTenWords (textArray) {
+    let wordCounts = {}
+    let topTen = []
+    // Don't add words that are too short and most conjuctions, i.e a, in, for, the
+    textArray.forEach(word => {
+      if (word.length <= 3) {
+        return
+      }
+
+      if (wordCounts[word]) {
+        // If this word is already in our object, increase the count of that word by 1
+        wordCounts[word]++
+      } else {
+        // Otherwise, say that we've found one of that word so far.
+        wordCounts[word] = 1
+      }
+    })
+    // Create an object of each word and its count
+    Object.keys(wordCounts).forEach(word => {
+      topTen.push({
+        word: word,
+        count: wordCounts[word]
+      })
+    })
+    // Sort the words by descending order
+    topTen.sort(function (a, b) {
+      return b.count - a.count
+    })
+    // Cut down array to the top ten words
+    this.setState({
+      topTenWords: topTen.slice(0, 10)
+    })
+    console.log(this.state)
   }
 
   handleChange (e) {
@@ -28,14 +65,15 @@ class App extends React.Component {
     axios.get('http://localhost:8000/scrape', {
       params: {url: this.state.url}
     }).then(res => {
-      let text = res.data
-      let textArray = text.split(' ')
-      console.log(textArray)
-      
+      const text = res.data
+      const textArray = text.split(' ')
+
+      // Add up total amount of words
       this.setState({
         wordTotal: textArray.length
       })
-      console.log(this.state.wordTotal)
+
+      this.getTopTenWords(textArray)
     })
   }
 
