@@ -62,6 +62,7 @@ class App extends React.Component {
   handleSubmit (e) {
     e.preventDefault()
 
+    // First axios request gets text, second one gets images
     axios.all([
       axios.get('http://localhost:8000/scrape', {
         params: {url: this.state.url}
