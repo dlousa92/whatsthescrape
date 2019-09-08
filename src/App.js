@@ -10,7 +10,8 @@ class App extends React.Component {
     this.state = {
       url: '',
       wordTotal: 0,
-      topTenWords: []
+      topTenWords: [],
+      imagesOnSite: []
     }
 
     this.handleChange = this.handleChange.bind(this)
