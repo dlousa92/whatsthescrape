@@ -4,7 +4,7 @@ import './header.css'
 const Header = () => {
   return (
     <div className='app-header'>
-      <h1>What The Scrape</h1>
+      <h1>What's The Scrape</h1>
     </div>
   )
 }
