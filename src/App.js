@@ -38,8 +38,8 @@ class App extends React.Component {
     // Create an object of each word and its count
     Object.keys(wordCounts).forEach(word => {
       topTen.push({
-        word: word,
-        count: wordCounts[word]
+        word: `${word}`,
+        count: `${wordCounts[word]}`
       })
     })
     // Sort the words by descending order
