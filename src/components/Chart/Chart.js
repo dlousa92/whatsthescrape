@@ -58,7 +58,6 @@ const Chart = (props) => {
     }]
   }
 
-  console.log(chartOptions.series[0])
   return (
     <div>
       {/* <h3>There are a total of 100 words on </h3> */}
