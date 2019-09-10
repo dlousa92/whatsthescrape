@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/Header/Header'
 import Form from './components/Form/Form'
 import ImageCarousel from './components/ImageCarousel/ImageCarousel'
+import Chart from './components/Chart/Chart'
 import './App.css'
 import axios from 'axios'
 
@@ -99,6 +100,7 @@ class App extends React.Component {
         />
 
         <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
+        <Chart />
       </div>
     )
   }
