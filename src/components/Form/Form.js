@@ -12,7 +12,7 @@ const Form = (props) => {
           onChange={props.handleChange}
         />
         <button className='form-submitbutton' onClick={props.handleSubmit}>
-          Add Item
+          Scrape!
         </button>
       </form>
     </div>
