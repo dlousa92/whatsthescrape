@@ -22,9 +22,6 @@ const ImageCarousel = (props) => {
                 src={img.src}
                 alt={img.alt}
               />
-              <Carousel.Caption>
-                <p>{img.alt}</p>
-              </Carousel.Caption>
             </Carousel.Item>
           )
         })}
