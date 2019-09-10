@@ -41,13 +41,13 @@ class App extends React.Component {
     // Create an array of each word and its count
     Object.keys(wordCounts).forEach(word => {
       topTen.push({
-        word: `${word}`,
-        count: `${wordCounts[word]}`
+        name: `${word}`,
+        y: wordCounts[word]
       })
     })
     // Sort the words by descending order
     topTen.sort(function (a, b) {
-      return b.count - a.count
+      return b.y - a.y
     })
     // Cut down array to the top ten words
     this.setState({
@@ -99,8 +99,8 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
         />
 
-        <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
-        <Chart />
+        {/* <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} /> */}
+        <Chart url={this.state.url} textData={this.state.topTenWords} />
       </div>
     )
   }
