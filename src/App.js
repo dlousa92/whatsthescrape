@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './components/Header/Header'
 import Form from './components/Form/Form'
-import Carousel from './components/Carousel/Carousel'
+import ImageCarousel from './components/ImageCarousel/ImageCarousel'
 import './App.css'
 import axios from 'axios'
 
@@ -98,7 +98,7 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
         />
 
-        {/* <Carousel /> */}
+        <ImageCarousel images={this.state.imagesOnSite} />
       </div>
     )
   }
