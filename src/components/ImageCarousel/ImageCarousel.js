@@ -11,7 +11,7 @@ const ImageCarousel = (props) => {
       <Carousel>
         {/** For each image create a carousel item */ }
         {images.map(function (img, index) {
-          if (img.src.length === 0) {
+          if (!img.src) {
             return
           }
 
