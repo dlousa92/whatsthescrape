@@ -5,12 +5,11 @@ const ImageCarousel = (props) => {
   let images = props.images
   let url = props.url
 
-  console.log(images)
-
   return (
     <div>
       <h2>There are a total of {images.length} viewable images on {url}.</h2>
       <Carousel>
+        {/** For each image create a carousel item */ }
         {images.map(function (img, index) {
           if (img.src.length === 0) {
             return
