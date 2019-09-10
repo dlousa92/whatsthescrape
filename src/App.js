@@ -1,7 +1,8 @@
 import React from 'react'
-import './App.css'
 import Header from './components/Header/Header'
 import Form from './components/Form/Form'
+import Carousel from './components/Carousel/Carousel'
+import './App.css'
 import axios from 'axios'
 
 class App extends React.Component {
@@ -36,7 +37,7 @@ class App extends React.Component {
         wordCounts[word] = 1
       }
     })
-    // Create an object of each word and its count
+    // Create an array of each word and its count
     Object.keys(wordCounts).forEach(word => {
       topTen.push({
         word: `${word}`,
@@ -75,11 +76,11 @@ class App extends React.Component {
       const text = textRes.data
       const textArray = text.split(' ')
       const images = imageRes.data
-      console.log(images)
 
       // Add up total amount of words
       this.setState({
-        wordTotal: textArray.length
+        wordTotal: textArray.length,
+        imagesOnSite: images
       })
 
       this.getTopTenWords(textArray)
@@ -96,6 +97,8 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
+
+        {/* <Carousel /> */}
       </div>
     )
   }
