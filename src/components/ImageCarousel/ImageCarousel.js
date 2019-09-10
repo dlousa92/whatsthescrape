@@ -3,19 +3,13 @@ import Carousel from 'react-bootstrap/Carousel'
 
 const ImageCarousel = (props) => {
   console.log(props)
-  const [index, setIndex] = React.useState(0)
-  const [direction, setDirection] = React.useState(null)
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex)
-    setDirection(e.direction)
-  }
   return (
-    <Carousel activeIndex={index} direction={direction} onSelect={handleSelect}>
+    <Carousel>
       <Carousel.Item>
         <img
           className='d-block w-100'
-          src='holder.js/800x400?text=First slide&bg=373940'
+          src=''
           alt='First slide'
         />
         <Carousel.Caption>
@@ -44,9 +38,7 @@ const ImageCarousel = (props) => {
 
         <Carousel.Caption>
           <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
