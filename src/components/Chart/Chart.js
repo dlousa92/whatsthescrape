@@ -11,13 +11,10 @@ const Chart = (props) => {
       type: 'column'
     },
     title: {
-      text: `The Top Ten Words on ${props.url}`
+      text: `The Top Ten Words by Appearance on ${props.url}`
     },
+    colors: ['#181a5c'],
     legend: {
-      title: {
-        text:
-          '<br/><span style="font-size: 12px; color: #808080; font-weight: normal">(Click to hide)</span>'
-      },
       align: 'center',
       verticalAlign: 'bottom',
       layout: 'horizontal'
@@ -64,6 +61,7 @@ const Chart = (props) => {
   console.log(chartOptions.series[0])
   return (
     <div>
+      {/* <h3>There are a total of 100 words on </h3> */}
       <HighchartsReact
         highcharts={Highcharts}
         options={chartOptions}
