@@ -98,7 +98,7 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
         />
 
-        <ImageCarousel images={this.state.imagesOnSite} />
+        <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
       </div>
     )
   }
