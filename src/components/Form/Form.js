@@ -10,12 +10,12 @@ const Form = (props) => {
         <form>
           <input
             type='text'
-            className='form-input'
+            className='input'
             value={props.url}
             placeholder='Please enter a url'
             onChange={props.handleChange}
           />
-          <button className='form-submitbutton' onClick={props.handleSubmit}>
+          <button className='submitbutton' onClick={props.handleSubmit}>
           Scrape!
           </button>
         </form>
