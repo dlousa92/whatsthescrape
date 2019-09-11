@@ -2,55 +2,34 @@ import React from 'react'
 import { render } from 'react-dom'
 import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts'
+import wordcloud from 'highcharts/modules/wordcloud'
+
+wordcloud(Highcharts)
 
 const Chart = (props) => {
   let data = props.textData
 
   const chartOptions = {
     chart: {
-      type: 'column'
+      type: 'wordcloud'
     },
     title: {
       text: `The Top Ten Words by Appearance on ${props.url}`
     },
-    colors: ['#181a5c'],
+    colors: ['#00035c', '#510061', '#810061', '#a81a5f' , '#c83f5b', '#e16458', '#f38959', '#ffb061'],
     legend: {
       align: 'center',
       verticalAlign: 'bottom',
-      layout: 'horizontal'
-    },
-    xAxis: {
-      labels: {
-        formatter: function () {
-          let format
-          let value = this.value
-          data.forEach(function (word, index) {
-            if (index === value) {
-              format = word.name.charAt(0).toUpperCase() + word.name.slice(1)
-            }
-          })
-          return format
-        }
-      }
-    },
-    yAxis: {
-      title: {
-        text: '# of Times Word Appears on Site'
-      }
+      layout: 'horizontal',
+      labelFormat: 'Words'
     },
     tooltip: {
+      backgroundColor: '#181a5c',
+      style: {'color': '#ffffff', 'cursor': 'default', 'fontSize': '14px', 'pointerEvents': 'none', 'whiteSpace': 'nowrap'},
+      headerFormat: '',
       pointFormatter: function () {
         let name = this.name.charAt(0).toUpperCase() + this.name.slice(1)
-        return `${name}: ${this.y}`
-      }
-    },
-    plotOptions: {
-      area: {
-        stacking: 'percent',
-        marker: {
-          enabled: false,
-          symbol: 'circle'
-        }
+        return `${name} appears ${this.weight} times`
       }
     },
     series: [{
