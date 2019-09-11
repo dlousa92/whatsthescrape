@@ -3,7 +3,7 @@ import Header from './components/Header/Header'
 import Form from './components/Form/Form'
 import ImageCarousel from './components/ImageCarousel/ImageCarousel'
 import Chart from './components/Chart/Chart'
-import './App.css'
+import './App.scss'
 import axios from 'axios'
 
 class App extends React.Component {
@@ -99,8 +99,8 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
         />
 
-        <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
-        <Chart url={this.state.url} topTenWords={this.state.topTenWords} />
+        {/* <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
+        <Chart url={this.state.url} topTenWords={this.state.topTenWords} /> */}
       </div>
     )
   }
