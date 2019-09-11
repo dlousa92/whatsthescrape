@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.app-header {
+  border-bottom: 2px solid $primary-accent-color;
+  background-image: url('../../images/dot-grid.png');
+  font-family: 'Overpass Mono', monospace;
+  padding: 2rem;
+  margin-bottom: 5rem;
+
+  &-text {
+    font-size: 3rem;
+    color: $primary-accent-color;
+  }
+}
