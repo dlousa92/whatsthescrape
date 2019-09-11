@@ -1,20 +1,25 @@
 import React from 'react'
+import './form.scss'
 
 const Form = (props) => {
   return (
-    <div className='form-component'>
-      <form className='form'>
-        <input
-          type='text'
-          className='form-input'
-          value={props.url}
-          placeholder='Please enter a url'
-          onChange={props.handleChange}
-        />
-        <button className='form-submitbutton' onClick={props.handleSubmit}>
+    <div className='form'>
+      <p className='form-text'>What's the scrape? This nifty little application will show you all the images on a webpage, as well as the most popular words found on it. To get started, enter a URL on the right.</p>
+
+      <div className='form-wrapper'>
+        <form>
+          <input
+            type='text'
+            className='form-input'
+            value={props.url}
+            placeholder='Please enter a url'
+            onChange={props.handleChange}
+          />
+          <button className='form-submitbutton' onClick={props.handleSubmit}>
           Scrape!
-        </button>
-      </form>
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
