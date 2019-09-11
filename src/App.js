@@ -99,7 +99,7 @@ class App extends React.Component {
           handleSubmit={this.handleSubmit}
         />
 
-        {/* <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} /> */}
+        <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
         {/* <Chart url={this.state.url} topTenWords={this.state.topTenWords} /> */}
       </div>
     )
