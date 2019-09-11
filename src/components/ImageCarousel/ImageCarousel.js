@@ -27,7 +27,7 @@ const ImageCarousel = (props) => {
           )
         })}
       </Carousel>
-      <p className='carousel-text'>There are a total of {images.length} viewable images on {url}.</p>
+      <p className='carousel-text'>There are a total of {images.length} viewable images on {url}</p>
     </div>
   )
 }
