@@ -42,12 +42,12 @@ class App extends React.Component {
     Object.keys(wordCounts).forEach(word => {
       topTen.push({
         name: `${word}`,
-        y: wordCounts[word]
+        weight: wordCounts[word]
       })
     })
     // Sort the words by descending order
     topTen.sort(function (a, b) {
-      return b.y - a.y
+      return b.weight - a.weight
     })
     // Cut down array to the top ten words
     this.setState({
