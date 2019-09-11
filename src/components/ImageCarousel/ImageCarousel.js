@@ -11,6 +11,7 @@ const ImageCarousel = (props) => {
       <Carousel className='carousel-wrapper'>
         {/** For each image create a carousel item */ }
         {images.map(function (img, index) {
+          // If src is undefined, early return
           if (!img.src) {
             return
           }
