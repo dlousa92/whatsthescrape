@@ -19,6 +19,7 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.getTopTenWords = this.getTopTenWords.bind(this)
+    this.setImagesOnSite = this.setImagesOnSite.bind(this)
   }
 
   getTopTenWords (textArray) {
@@ -56,6 +57,20 @@ class App extends React.Component {
     console.log(this.state)
   }
 
+  setImagesOnSite (images) {
+    let imagesOnSite = []
+
+    images.forEach(image => {
+      // If image is stored locally, do not add it as a viewable image to our images on site array
+      if (image.src.substr(0, 4) !== 'http') {
+        return
+      }
+      imagesOnSite.push(image)
+    })
+    this.setState({
+      imagesOnSite: imagesOnSite
+    })
+  }
   handleChange (e) {
     this.setState({
       url: e.target.value
@@ -80,10 +95,10 @@ class App extends React.Component {
 
       // Add up total amount of words
       this.setState({
-        wordTotal: textArray.length,
-        imagesOnSite: images
+        wordTotal: textArray.length
       })
 
+      this.setImagesOnSite(images)
       this.getTopTenWords(textArray)
     }))
   }
