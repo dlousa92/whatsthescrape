@@ -7,7 +7,7 @@ import wordcloud from 'highcharts/modules/wordcloud'
 wordcloud(Highcharts)
 
 const Chart = (props) => {
-  let data = props.textData
+  let data = props.topTenWords
 
   const chartOptions = {
     chart: {

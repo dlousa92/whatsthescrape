@@ -100,7 +100,7 @@ class App extends React.Component {
         />
 
         <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
-        <Chart url={this.state.url} textData={this.state.topTenWords} />
+        <Chart url={this.state.url} topTenWords={this.state.topTenWords} />
       </div>
     )
   }
