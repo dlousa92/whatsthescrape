@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:700&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Crimson+Pro|Overpass+Mono:700&display=swap');
+@import './styles/reset.scss';
 body {
   margin: 0;
   box-sizing: border-box;
