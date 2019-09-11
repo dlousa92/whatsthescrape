@@ -1,14 +1,14 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
+import './imagecarousel.scss'
 
 const ImageCarousel = (props) => {
   let images = props.images
   let url = props.url
 
   return (
-    <div>
-      <h2>There are a total of {images.length} viewable images on {url}.</h2>
-      <Carousel>
+    <div className='carousel'>
+      <Carousel className='carousel-wrapper'>
         {/** For each image create a carousel item */ }
         {images.map(function (img, index) {
           if (!img.src) {
@@ -18,7 +18,7 @@ const ImageCarousel = (props) => {
           return (
             <Carousel.Item key={index}>
               <img
-                className='d-block w-100'
+                className='d-block carousel-img'
                 src={img.src}
                 alt={img.alt}
               />
@@ -26,6 +26,7 @@ const ImageCarousel = (props) => {
           )
         })}
       </Carousel>
+      <p className='carousel-text'>There are a total of {images.length} viewable images on {url}.</p>
     </div>
   )
 }
