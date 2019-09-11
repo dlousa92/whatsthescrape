@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
+import './chart.scss'
 import HighchartsReact from 'highcharts-react-official'
 import Highcharts from 'highcharts'
 import wordcloud from 'highcharts/modules/wordcloud'
@@ -8,13 +9,17 @@ wordcloud(Highcharts)
 
 const Chart = (props) => {
   let data = props.topTenWords
+  let wordTotal = props.wordTotal
+  let url = props.url
 
   const chartOptions = {
     chart: {
-      type: 'wordcloud'
+      type: 'wordcloud',
+      height: 500,
+      width: 700
     },
     title: {
-      text: `The Top Ten Words by Appearance on ${props.url}`
+      text: ''
     },
     colors: ['#00035c', '#510061', '#810061', '#a81a5f', '#c83f5b', '#e16458', '#f38959', '#ffb061'],
     legend: {
@@ -38,8 +43,8 @@ const Chart = (props) => {
   }
 
   return (
-    <div>
-      {/* <h3>There are a total of 100 words on </h3> */}
+    <div className='chart'>
+      <p className='chart-text'>There are a total of <span className='word-total'>{wordTotal}</span> words on {url}. The bigger the word, the more times it appears. Hover over a word to see exactly how many times it shows up! </p>
       <HighchartsReact
         highcharts={Highcharts}
         options={chartOptions}
