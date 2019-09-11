@@ -31,10 +31,33 @@
     form {
       display: flex;
       flex-direction: column;
+      align-items: center;
       font-family: $accent-font;
+      flex-basis: 100%;
 
       .input {
-        padding: .3rem;
+        padding: .5rem;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+        width: 80%;
+
+        &:focus {
+          border: 3px solid $primary-accent-color;
+        }
+      }
+
+      .submitbutton {
+        padding: .5rem;
+        border-radius: 4px;
+        width: 50%;
+        color: $primary-accent-color;
+        background-color: $white;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+
+        &:hover {
+          box-shadow: 4px 4px 0 0 $translucent-white;
+        }
       }
     }
   }
