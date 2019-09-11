@@ -16,7 +16,7 @@ const Chart = (props) => {
     title: {
       text: `The Top Ten Words by Appearance on ${props.url}`
     },
-    colors: ['#00035c', '#510061', '#810061', '#a81a5f' , '#c83f5b', '#e16458', '#f38959', '#ffb061'],
+    colors: ['#00035c', '#510061', '#810061', '#a81a5f', '#c83f5b', '#e16458', '#f38959', '#ffb061'],
     legend: {
       align: 'center',
       verticalAlign: 'bottom',
