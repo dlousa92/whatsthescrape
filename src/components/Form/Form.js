@@ -4,7 +4,7 @@ import './form.scss'
 const Form = (props) => {
   return (
     <div className='form'>
-      <p className='form-text'>What's the scrape? This nifty little application will show you all the images on a webpage, as well as the most popular words found on it. To get started, enter a URL on the right.</p>
+      <p className='form-text'>What's the scrape? This nifty little application will show you all the images on a webpage, as well as the most popular words found on it. To get started, enter a URL in the search field.</p>
 
       <div className='form-wrapper'>
         <form>
