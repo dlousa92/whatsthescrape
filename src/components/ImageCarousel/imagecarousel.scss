@@ -1,23 +1,41 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 5rem 0rem;
 
+  @include breakpoint-lg {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
   &-wrapper {
-    width: 800px;
+
+    @include breakpoint-lg {
+      width: 80%;
+    }
+
+    @include breakpoint-xl {
+      width: 100%;
+    }
   }
 
   &-text {
     display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: 1.8rem;
-    height: 500px;
-    padding: 4rem 4rem;
+    font-size: 1.4rem;
+    padding: 2rem;
     color: $primary-accent-color;
     background-color: $translucent-white;
+
+    @include breakpoint-xl {
+      font-size: 1.8rem;
+      padding: 4rem;
+      height: 500px;
+    }
   }
 }
 
@@ -30,6 +48,11 @@
  }
 
 .carousel-img {
-  height: 500px;
-  width: 700px;
+  height: 300px;
+  width: 100%;
+
+  @include breakpoint-xl {
+    height: 500px;
+    width: 700px;
+  }
 }

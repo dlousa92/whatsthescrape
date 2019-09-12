@@ -8,6 +8,8 @@ const ImageCarousel = (props) => {
 
   return (
     <div className='carousel'>
+      <p className='carousel-text'>There are a total of {images.length} viewable images on {url}</p>
+      
       <Carousel className='carousel-wrapper'>
         {/** For each image create a carousel item */ }
         {images.map(function (img, index) {
@@ -30,8 +32,6 @@ const ImageCarousel = (props) => {
           <span className='sr-only'>Next</span>
         </a>
       </Carousel>
-
-      <p className='carousel-text'>There are a total of {images.length} viewable images on {url}</p>
     </div>
   )
 }
