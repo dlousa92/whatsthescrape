@@ -14,9 +14,7 @@ const Chart = (props) => {
 
   const chartOptions = {
     chart: {
-      type: 'wordcloud',
-      height: 500,
-      width: 700
+      type: 'wordcloud'
     },
     title: {
       text: ''
@@ -48,6 +46,7 @@ const Chart = (props) => {
       <HighchartsReact
         highcharts={Highcharts}
         options={chartOptions}
+        className='chart-highchart'
       />
     </div>
   )
