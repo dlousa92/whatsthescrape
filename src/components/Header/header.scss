@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .app-header {
   background-image: url('../../images/dot-grid.png');
@@ -6,7 +7,11 @@
   padding: 3rem;
 
   &-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: $primary-accent-color;
+
+    @include breakpoint-xl {
+      font-size: 3rem;
+    }
   }
 }
