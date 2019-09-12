@@ -1,10 +1,15 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .form {
+
+  @include breakpoint-lg {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
+
+  }
 
   &-text {
     display: flex;
@@ -14,7 +19,6 @@
     color: $primary-accent-color;
     background-color: $translucent-white;
     font-size: 1.8rem;
-    margin-top: 0;
     padding: 0rem 5rem;
   }
 
@@ -22,25 +26,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 20rem;
+    width: 70%;
     border-radius: 10%;
-    height: 100%;
-    flex-basis: 30%;
-    margin-top: 0;
-    margin-right: 2rem;
     background-color: $secondary-accent-color;
+    margin: 4rem auto;
+
+    @include breakpoint-md {
+      width: 40%;
+    }
+
+    @include breakpoint-lg {
+      height: 100%;
+      margin: 0;
+      flex-basis: 30%;
+    }
 
     form {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       font-family: $accent-font;
-      flex-basis: 100%;
+
+      @include breakpoint-lg {
+        flex-basis: 100%;
+      }
 
       .input {
         padding: .5rem;
         border-radius: 4px;
         margin-bottom: 2rem;
-        width: 80%;
+        width: 100%;
+
+        @include breakpoint-lg {
+          width: 75%;
+        }
 
         &:focus {
           border: 3px solid $primary-accent-color;
@@ -55,6 +76,10 @@
         background-color: $white;
         -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
+
+        @include breakpoint-lg {
+          width: 40%;
+        }
 
         &:hover {
           box-shadow: 4px 4px 0 0 $translucent-white;
