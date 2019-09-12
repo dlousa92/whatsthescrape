@@ -30,6 +30,7 @@ const ImageCarousel = (props) => {
           <span className='sr-only'>Next</span>
         </a>
       </Carousel>
+
       <p className='carousel-text'>There are a total of {images.length} viewable images on {url}</p>
     </div>
   )
