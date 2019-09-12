@@ -86,11 +86,12 @@ class App extends React.Component {
     }
 
     imagesOnSite = removeDuplicates(imagesOnSiteWithDuplicates, 'src')
-    console.log(imagesOnSite)
+
     this.setState({
       imagesOnSite: imagesOnSite
     })
   }
+
   handleChange (e) {
     this.setState({
       url: e.target.value
@@ -118,13 +119,14 @@ class App extends React.Component {
         wordTotal: textArray.length
       })
 
+      // Run our data formatting functions
       this.setImagesOnSite(images)
       this.getTopTenWords(textArray)
     }))
   }
 
   displayResults () {
-    if (this.state.imagesOnSite.length === 0) {
+    if (this.state.topTenWords.length === 0) {
       return
     }
     return (
