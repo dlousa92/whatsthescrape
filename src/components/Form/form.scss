@@ -3,6 +3,8 @@
 
 .form {
 
+  background-color: $translucent-white;
+
   @include breakpoint-xl {
   display: flex;
   justify-content: center;
@@ -15,7 +17,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-    flex-basis: 60%;
     color: $primary-accent-color;
     background-color: $translucent-white;
     font-size: 1.4rem;
@@ -27,7 +28,8 @@
 
     @include breakpoint-xl {
       font-size: 1.8rem;
-      padding: 0rem 5rem;
+      padding: 0 8rem 0 5rem;
+      flex-basis: 50%;
       margin: 0;
     }
   }
