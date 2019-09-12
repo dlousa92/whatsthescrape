@@ -59,15 +59,34 @@ class App extends React.Component {
   }
 
   setImagesOnSite (images) {
+    let imagesOnSiteWithDuplicates = []
     let imagesOnSite = []
 
+    // If image is stored locally, do not add it as a viewable image to our images on site array, otherwise push it into our images with duplicates array
     images.forEach(image => {
-      // If image is stored locally, do not add it as a viewable image to our images on site array
       if (image.src.substr(0, 4) !== 'http') {
         return
       }
-      imagesOnSite.push(image)
+      imagesOnSiteWithDuplicates.push(image)
     })
+
+    // Removes duplicate images from our images with duplicates array
+    function removeDuplicates (imagesOnSiteWithDuplicates, src) {
+      let newArray = []
+      let lookupObject = {}
+
+      for (var i in imagesOnSiteWithDuplicates) {
+        lookupObject[imagesOnSiteWithDuplicates[i][src]] = imagesOnSiteWithDuplicates[i]
+      }
+
+      for (i in lookupObject) {
+        newArray.push(lookupObject[i])
+      }
+      return newArray
+    }
+
+    imagesOnSite = removeDuplicates(imagesOnSiteWithDuplicates, 'src')
+    console.log(imagesOnSite)
     this.setState({
       imagesOnSite: imagesOnSite
     })
