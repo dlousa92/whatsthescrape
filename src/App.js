@@ -20,7 +20,7 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.getTopTenWords = this.getTopTenWords.bind(this)
     this.setImagesOnSite = this.setImagesOnSite.bind(this)
-    this.displayImageCarousel = this.displayImageCarousel.bind(this)
+    this.displayResults = this.displayResults.bind(this)
   }
 
   getTopTenWords (textArray) {
@@ -123,12 +123,15 @@ class App extends React.Component {
     }))
   }
 
-  displayImageCarousel () {
+  displayResults () {
     if (this.state.imagesOnSite.length === 0) {
       return
     }
     return (
-      <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
+      <div>
+        <ImageCarousel url={this.state.url} images={this.state.imagesOnSite} />
+        <Chart url={this.state.url} topTenWords={this.state.topTenWords} wordTotal={this.state.wordTotal} />
+      </div>
     )
   }
 
@@ -142,8 +145,7 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        {this.displayImageCarousel()}
-        {/* <Chart url={this.state.url} topTenWords={this.state.topTenWords} /> */}
+        {this.displayResults()}
       </div>
     )
   }
