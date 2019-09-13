@@ -26,6 +26,7 @@ class App extends React.Component {
   getTopTenWords (textArray) {
     let wordCounts = {}
     let topTen = []
+
     // Don't add words that are too short and most conjuctions, i.e a, in, for, the
     textArray.forEach(word => {
       if (word.length <= 3) {
@@ -55,7 +56,6 @@ class App extends React.Component {
     this.setState({
       topTenWords: topTen.slice(0, 10)
     })
-    console.log(this.state)
   }
 
   setImagesOnSite (images) {
